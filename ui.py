@@ -306,20 +306,9 @@ uvicorn_process = None
 def run_fastapi():
     global uvicorn_process
     if uvicorn_process is None:
-        uvicorn_process = subprocess.Popen(["python", "service.py"])
+        uvicorn_process = subprocess.Popen(["uvicorn", "service:app", "--host", "127.0.0.1", "--port", "8000"])
         print("FastAPI server has been started.")
-        
-        for _ in range(30):  
-            try:
-                requests.get("http://localhost:8000")
-                print("FastAPI server is ready.")
-                break
-            except requests.ConnectionError:
-                time.sleep(1)
-        else:
-            print("Failed to start FastAPI server.")
 
-run_fastapi()
 def cleanup():
     global uvicorn_process
     if uvicorn_process:

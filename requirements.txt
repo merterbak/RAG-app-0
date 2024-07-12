@@ -15,4 +15,4 @@ plotly
 llama_index.core
 llama_index
 llama-index-embeddings-langchain
-
+llama-index-embeddings-huggingface

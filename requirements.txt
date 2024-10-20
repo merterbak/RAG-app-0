@@ -10,7 +10,6 @@ langchain-google-genai==1.0.2
 python-dotenv==1.0.1
 streamlit==1.33.0
 openai ==1.35.10
-# UI
 plotly
 llama_index.core
 llama_index
